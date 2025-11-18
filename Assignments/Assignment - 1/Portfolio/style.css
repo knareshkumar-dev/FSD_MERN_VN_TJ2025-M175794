@@ -1,0 +1,794 @@
+/*----------------------------------------------------------Default---------------------------------------------------------*/
+* {
+  padding: 0;
+  margin: auto;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+/*---------------------------------------------------------Variables--------------------------------------------------------*/
+
+:root {
+  --primary-color: #222831;
+  --secondary-color: #EEEEEE;
+  --accent-color: #393E46;
+  --light-text: #ffffff;
+  --gray-background: rgb(174, 172, 172);
+}
+
+/*----------------------------------------------------------Body------------------------------------------------------------*/
+
+body {
+  background-color: var(--secondary-color);
+  overflow-x: hidden;
+}
+
+.bg-gray {
+  background-color: var(--gray-background);
+}
+
+
+
+/*---------------------------------------------------------Section----------------------------------------------------------*/
+
+section {
+  padding: 2rem 0px;
+  background-color: var(--secondary-color);
+  color: #000;
+  /* overflow: hidden; */
+  min-height: 100vh;
+  font-size: 1.2rem;
+}
+
+section h1,
+section h2 {
+  color: var(--primary-color);
+}
+
+section p {
+  color: #000;
+}
+
+/*-------------------------------------------------------Navbar Styles------------------------------------------------------*/
+.bg-color {
+  background-color: var(--primary-color) !important;
+  color: var(--light-text);
+}
+
+.navbar-brand {
+  color: var(--light-text);
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand:hover {
+  transform:skewX(10deg);
+  color: #fff;
+
+}
+
+.nav-link {
+  position: relative;
+  color: var(--light-text);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: rgb(180, 178, 178);
+  border-radius: 20px;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  width: 0%;
+  height: 5px;
+  background-color: #fff;
+  z-index: -1;
+  transition: all 0.5s ease;
+  transform: translate(-50%, -50%);
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(255,255,255,0.85)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/*-----------------------------------------Transistion for Navigation------------------------------------------------------*/
+
+.transition-up-down {
+  opacity: 0;
+  animation: transition-up-down 0.3s ease-in forwards;
+}
+
+@keyframes transition-up-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar-nav .transition-up-down:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.navbar-nav .transition-up-down:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.navbar-nav .transition-up-down:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.navbar-nav .transition-up-down:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.navbar-nav .transition-up-down:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.navbar-nav .transition-up-down:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.navbar-nav .transition-up-down:nth-child(7) {
+  animation-delay: 0.7s;
+}
+
+
+/*-------------------------------------------------------Button Styles------------------------------------------------------*/
+.btn-style {
+  background-color: #FFB200 !important;
+  color: #000 !important;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid black;
+  border-radius: 20px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-style:hover {
+  transform: scale(1.1);
+  border-color: #000 !important;
+  color: #fff;
+  background-color: #000;
+}
+
+/*---------------------------------------------Transistion for Content -----------------------------------------------*/
+/*                                           Content from left to right                                               */
+
+.content-slide-left {
+  opacity: 1;
+  animation: slideInLeft 0.5s ease-in forwards;
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*----------------------------------Transistion for Image Style------------------------------------------------------*/
+/*                                   Image from right to left                                                        */
+
+.image-slide-right {
+  opacity: 1;
+  animation: slideInRight 0.5s ease-in forwards;
+}
+
+.img-rounded {
+  border-radius: 25px;
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*-------------------------------------------------------About Section------------------------------------------------------*/
+/*                                                  About Me Section Styling                                                */
+
+#about {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 2px solid #000;
+}
+
+#about h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222831;
+  margin-bottom: 2rem;
+}
+
+#about p {
+  line-height: 1.8;
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+/*-------------------------------------------------------Skill Section------------------------------------------------------*/
+/*                                                 Skill Card Base Styling                                                  */
+
+.skill-card {
+  min-height: 250px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.215);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.skill-title {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.skill-description {
+  font-size: 0.9rem;
+  color: #6c757d;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.8s ease, visibility 0.3s ease;
+}
+
+.skill-card:hover .skill-description {
+  visibility: visible;
+  opacity: 1;
+  color: #000;
+}
+
+/*-----------------------------------------------Qualification Section------------------------------------------------------*/
+
+#qualification {
+  background-color: #f8f9fa;
+  padding: 40px 0;
+}
+
+#qualification .qualification-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+#qualification ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+#qualification li {
+  list-style: none;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  line-height: 1.6;
+}
+
+#qualification h5 {
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #222831;
+}
+
+#qualification p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+#qualification .text-muted {
+  color: #777;
+}
+
+/*----------------------------------------------------Services Section------------------------------------------------------*/
+
+#services {
+  background-color: var(--gray-background);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+#services .container {
+  min-width: 100vw;
+  margin: 0 auto;
+  /* padding: 20px; */
+}
+
+#services .section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #333;
+  /* text-decoration: underline; */
+}
+
+#services .services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+#services .service-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 30px;
+  width: 480px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  line-height: 1.6;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+#services .service-box h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #850606;
+}
+
+#services .service-box p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+#services .btn {
+  background-color: #fff;
+  color: #850606;
+  border: 1px solid #850606;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+/*----------------------------------------------------Projects Section------------------------------------------------------*/
+
+#projects {
+  margin-bottom: 20px;
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.card {
+  min-height: 550px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 1.0rem;
+  border-radius: 20px;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card img {
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/*                                                           Card Titles                                                    */
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #343a40;
+}
+
+/* Project Section Heading */
+#projects h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #495057;
+}
+
+#projects p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 3rem;
+}
+
+/*----------------------------------------------------Contact Section Styling-----------------------------------------------*/
+
+#contact {
+  background: linear-gradient(135deg, #212529, #343a40);
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#contact h2 {
+  font-size: 2.8rem;
+  color: #f8f9fa;
+  font-weight: bold;
+  position: relative;
+}
+
+#contact p {
+  font-size: 1.2rem;
+  color: #f8f9fa;
+}
+
+/*------------------------------------------------------Contact Information Card--------------------------------------------*/
+.contact-info {
+  border-left: 5px solid #D09683;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  background-color: #495057;
+  color: #f8f9fa;
+}
+
+.contact-info:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 123, 255, 0.2);
+}
+
+.contact-info .icon-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -30px;
+  left: -30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: all 0.4s ease-in-out;
+  background-color: #D09683;
+}
+
+.contact-info:hover .icon-circle {
+  transform: rotate(360deg);
+}
+
+/*----------------------------------------------------- Contact Form--------------------------------------------------------*/
+.contact-form {
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #495057;
+}
+
+.contact-info p,
+a {
+  color: #000;
+}
+
+.contact-form:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button {
+  border-radius: 20px;
+  width: 80%;
+  transition: background-color 0.3s ease, transform 0.2s;
+  background-color: #000;
+}
+
+.contact-form button:hover {
+  background-color: #000;
+  transform: scale(1.05);
+}
+
+/*-----------------------------------------------(Responsive Design)---------992px View ------------------------------------*/
+
+
+@media (max-width: 992px) {
+
+  /* Tablet and smaller screens */
+  .navbar-brand {
+    /* order: -1; */
+    margin-right: auto;
+  }
+}
+
+
+/*-----------------------------------------------(Responsive Design)--------Tablet-View ------------------------------------*/
+@media (max-width: 768px) {
+
+
+  nav {
+    padding: -1rem;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    font-size: 0.rem;
+  }
+
+
+
+  .navbar-collapse {
+    text-align: center;
+    /* Center content in collapse */
+  }
+
+  .nav-link {
+    padding: 10px;
+    /* font-size: 0.5rem; */
+  }
+
+
+  .nav-link:hover::before {
+    width: 0;
+  }
+
+
+  /*----------------------------------------------------------------Home------------------------------------------------------*/
+  #home {
+    flex-direction: column-reverse;
+    text-align: center;
+    justify-content: center;
+  }
+
+  /* .content-slide-left,
+.image-slide-right {
+  opacity: 1;
+  transform: translateX(0);
+  animation: none;
+} */
+
+  /*--------------------------------------------------------Section----------------------------------------------------------*/
+
+
+  section {
+    overflow: hidden;
+  }
+
+  .content-slide-left {
+    margin-bottom: 30px;
+  }
+
+  .image-slide-right img {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .skill-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .skill-title {
+    font-size: 1rem;
+  }
+
+  .skill-description {
+    font-size: 0.85rem;
+  }
+
+  /*-------------------------------------------------------Qualification------------------------------------------------------*/
+
+  #qualification li {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #qualification .qualification-img {
+    margin-bottom: 10px;
+    width: 60px;
+    height: 60px;
+  }
+
+  #qualification h5 {
+    font-size: 1rem;
+  }
+
+  #qualification p {
+    font-size: 0.9rem;
+  }
+
+
+  /*------------------------------------------------------------Services------------------------------------------------------*/
+
+  #services .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #services .service-box {
+    width: 90%;
+  }
+}
+
+/*-----------------------------------------------(Responsive Design)--------Mobile-View ------------------------------------*/
+
+@media (max-width: 576px) {
+
+  .navbar-nav {
+    text-align: left;
+  }
+
+  .btn-animate {
+    margin-top: 10px;
+    /* display: block; */
+  }
+
+  .navbar-brand {
+    color: var(--light-text);
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  /*--------------------------------------------------------Section----------------------------------------------------------*/
+
+  section {
+    padding: 50px 20px;
+    flex-direction: column-reverse;
+  }
+
+  .image-slide-right img {
+    max-width: 100%;
+  }
+
+  /*---------------------------------------------------------Skill------------------------------------------------------------*/
+
+  .skill-card {
+    padding: 15px;
+    padding-bottom: -100px;
+  }
+
+  .skill-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .skill-title {
+    font-size: 1rem;
+  }
+
+  .skill-description {
+    font-size: 0.8rem;
+  }
+
+  .col-sm-12 {
+    margin-bottom: 10px;
+  }
+
+  /*-------------------------------------------------------Qualification------------------------------------------------------*/
+
+  #qualification .qualification-img {
+    width: 50px;
+    height: 50px;
+  }
+
+  #qualification h5 {
+    font-size: 0.9rem;
+  }
+
+  #qualification p {
+    font-size: 0.8rem;
+  }
+
+  /*-------------------------------------------------------Services------------------------------------------------------*/
+
+  #services .section-title {
+    font-size: 1.75rem;
+  }
+
+  #services .service-box h3 {
+    font-size: 1.25rem;
+  }
+
+  #services .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+
+
+}
+
+/*--------------------------------------------------------(Animation-1------------------------------------------------------*/
+/*                                                Slide In From Right Animation                                             */
+.slide-in {
+  animation: slideInAnimation both;
+  animation-timeline: view(70% 5%);
+}
+
+@keyframes slideInAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*--------------------------------------------------------(Animation-2------------------------------------------------------*/
+/*                                                Slide Out From Left Animation                                             */
+
+.slide-out {
+  animation: slideOutAnimation both;
+  animation-timeline: view(70% 5%);
+}
+
+@keyframes slideOutAnimation {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*--------------------------------------------------------(Animation-3------------------------------------------------------*/
+/*                                                      Zoom-In Animation                                                   */
+.zoomIn {
+  animation: zoomInAnimation 1s ease-out both;
+  animation-timeline: view(70% 5%);
+}
+
+@keyframes zoomInAnimation {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------------*/
